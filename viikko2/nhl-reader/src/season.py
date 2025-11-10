@@ -8,11 +8,11 @@ class Season:
 
         if user_selection:
             self.season = user_selection
-        
+
         else:
             print(f"Käytetään oletuskautta {self.season}")
 
         return self.season
-    
+
     def get_url(self):
         return f"https://studies.cs.helsinki.fi/nhlstats/{self.season}/players"

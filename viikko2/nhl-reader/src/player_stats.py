@@ -1,6 +1,4 @@
 from player_reader import PlayerReader
-from player import Player
-
 
 class PlayerStats:
 
@@ -15,3 +13,13 @@ class PlayerStats:
         players_sorted = sorted(by_nationality, key = lambda p: p.points(), reverse=True)
 
         return players_sorted
+
+    def average_points(self):
+        players = self.reader.get_players()
+        if not players:
+            return 0
+        total_points = sum(p.points() for p in players)
+        return total_points / len(players)
+
+    def _points(self, player):
+        return player.points()

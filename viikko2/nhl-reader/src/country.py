@@ -1,5 +1,4 @@
 class Country:
-    
     def __init__(self, default_country="FIN"):
         self.country = default_country
 
@@ -9,11 +8,10 @@ class Country:
 
         if user_selection:
             self.country = user_selection
-        
         else:
             print(f"Käytetään oletuskautta {self.country}")
 
         return self.country
-    
+
     def get_url(self):
         return f"https://studies.cs.helsinki.fi/nhlstats/{self.country}/players"
