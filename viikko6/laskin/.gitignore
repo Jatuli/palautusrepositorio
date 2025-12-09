@@ -1,0 +1,17 @@
+# Virtuaaliympäristöt
+venv/
+
+# Python bytecode ja cache
+__pycache__/
+*.py[cod]
+
+# IDE / editorit
+.vscode/
+.idea/
+
+# MacOS
+.DS_Store
+
+# Logit ja väliaikaiset tiedostot
+*.log
+*.tmp
