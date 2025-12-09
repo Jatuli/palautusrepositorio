@@ -12,15 +12,24 @@ class Komentotehdas:
     def __init__(self, sovelluslogiikka, io):
 
         self.komennot = {
-            "Summa": Summa(sovelluslogiikka, io),
-            "Erotus": Erotus(sovelluslogiikka, io),
-            "Nollaus": Nollaus(sovelluslogiikka, io),
-            "Kumoa": Kumoa(sovelluslogiikka, io)
+            "summa": Summa(sovelluslogiikka, io),
+            "erotus": Erotus(sovelluslogiikka, io),
+            "nollaus": Nollaus(sovelluslogiikka, io),
+            "kumoa": Kumoa(sovelluslogiikka, io)
         }
 
     def hae(self, komento):
         return self.komennot.get(komento, Tuntematon())
-    
+
+class GuiIO:
+    def __init__(self, syote_kentta):
+        self._syote_kentta = syote_kentta
+
+    def lue_luku(self):
+        try:
+            return int(self._syote_kentta.get())
+        except ValueError:
+            return 0
 
 class Summa:
     def __init__(self, sovelluslogiikka, io):
